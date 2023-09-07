@@ -1,29 +1,23 @@
 import './assets/main.css'
 
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
-import {createI18n} from "vue-i18n";
+import i18n from './locales/i18n'
 
-const i18n = createI18n({
-    locale: 'fr',
-    legacy: true,
-    messages: {
-        en:{
-            login: 'Login',
-            contact: 'Contact',
-        },
-        es:{
-            login: 'Iniciar Sesión',
-            contact: 'Contacto',
-        },
-        fr:{
-            login: 'Connexion',
-            contact: 'Contact',
+import PrimeVue from 'primevue/config'
+import 'primevue/resources/primevue.min.css' //core css
+import 'primevue/resources/themes/md-light-deeppurple/theme.css' //theme
+import 'primeicons/primeicons.css' //icons
 
-        }
-    }
-})
+import Button from 'primevue/button';
+import InputText from "primevue/inputtext";
+import Avatar from 'primevue/avatar';
 
 const app = createApp(App);
 app.use(i18n);
+app.use(PrimeVue);
+
+app.component('pv-button', Button);
+app.component('pv-inputText', InputText);
+app.component('pv-label', Avatar);
 app.mount('#app');

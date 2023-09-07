@@ -10,27 +10,28 @@ export default {
 </script>
 
 <template>
-  <label class="title">{{$t('contact')}}</label>
+  <pv-label class="title">{{$t('contact')}}</pv-label>
   <div class="form-container">
     <div class="control">
-      <label for="name">Name:</label>
-      <input type="text" id="name" aria-label="Enter your name">
+      <pv-label class="label" for="name">Name:</pv-label>
+      <pv-inputText type="text" id="name" size="small" aria-label="Enter your name"/>
     </div>
     <div class="control">
-      <label for="email" >Email:</label>
-      <input type="email" id="email" aria-label="Enter your email" >
+      <pv-label class="label" for="email" >Email:</pv-label>
+      <pv-inputText type="email" id="email" size="small" aria-label="Enter your email"/>
     </div>
     <div class="control">
-      <label for="message">Message:</label>
-      <input type="text" id="text" aria-label="Enter your message">
+      <pv-label class="label" for="message">Message:</pv-label>
+      <pv-inputText type="text" id="text" size="large" aria-label="Enter your message"/>
     </div>
-    <button class="btn">Send</button>
+    <pv-button class="btn">Send</pv-button>
   </div>
 </template>
 
 <style scoped>
 .title{
   font-style: italic;
+  background-color:transparent;
 }
 
 .form-container{
@@ -44,8 +45,9 @@ export default {
   gap: 4px;
   margin-bottom: 10px;
 }
-.form-container label{
+.label{
   width: 100px;
+  background-color:transparent;
 }
 
 .btn{

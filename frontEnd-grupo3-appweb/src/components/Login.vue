@@ -9,23 +9,24 @@ export default {
 </script>
 
 <template>
-  <label class="title">{{$t('login')}}</label>
+  <pv-label class="title">{{$t('login')}}</pv-label>
   <div class="form-container">
     <div class="control">
-      <label for="mail">Email:</label>
-      <input type="email" id="mail" aria-label="Enter your email">
+      <pv-label class="label" for="email">Email:</pv-label>
+      <pv-inputText type="email" id="email" size="small" aria-label="Enter your email"/>
     </div>
     <div class="control">
-      <label for="password" >Password:</label>
-      <input type="password" id="password" aria-label="Enter your password" >
+      <pv-label class="label" for="password" >Password:</pv-label>
+      <pv-inputText type="password" id="password" size="small" aria-label="Enter your password"/>
     </div>
-    <button class="btn">Send</button>
+    <pv-button class="btn">Send</pv-button>
   </div>
 </template>
 
 <style scoped>
 .title{
   font-style: italic;
+  background-color:transparent;
 }
 
 .form-container{
@@ -39,8 +40,9 @@ export default {
   gap: 4px;
   margin-bottom: 10px;
 }
-.form-container label{
+.label{
   width: 100px;
+  background-color:transparent;
 }
 .btn{
   margin-top: 10px;
