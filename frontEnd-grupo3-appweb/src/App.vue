@@ -1,18 +1,20 @@
 <script setup>
 
-import Contact from "@/components/Contact.vue";
-import Login from "@/components/Login.vue";
 </script>
 
 <template>
   <header>
-    <div class="wrapper">
-    </div>
   </header>
 
+  <nav>
+    <router-link to="/">Home</router-link>
+    <router-link to="/login">Login</router-link>
+    <router-link to="/contact">Contact</router-link>
+    <router-link to="/users">Users</router-link>
+  </nav>
+
   <main>
-    <Contact/>
-    <Login/>
+    <router-view></router-view>
   </main>
 </template>
 
@@ -26,16 +28,6 @@ header {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
   }
 }
 </style>

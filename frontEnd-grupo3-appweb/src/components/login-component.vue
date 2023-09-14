@@ -13,11 +13,11 @@ export default {
   <div class="form-container">
     <div class="control">
       <pv-label class="label" for="email">Email:</pv-label>
-      <pv-inputText type="email" id="email" size="small" aria-label="Enter your email"/>
+      <pv-inputText class="text" type="email" id="email" size="small" aria-label="Enter your email"/>
     </div>
     <div class="control">
       <pv-label class="label" for="password" >Password:</pv-label>
-      <pv-inputText type="password" id="password" size="small" aria-label="Enter your password"/>
+      <pv-inputText class="text" type="password" id="password" size="small" aria-label="Enter your password"/>
     </div>
     <pv-button class="btn">Send</pv-button>
   </div>
@@ -37,15 +37,43 @@ export default {
 .control{
   display: flex;
   flex-direction: row;
-  gap: 4px;
-  margin-bottom: 10px;
+  margin: 5px;
+  justify-content: flex-start;
 }
 .label{
-  width: 100px;
+  display: flex;
+  width: 50%;
   background-color:transparent;
+  margin: 5px;
+  justify-content: flex-start;
 }
+
 .btn{
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin: 15px 0;
 }
+@media (min-width: 445px) and (max-width: 1023px) {
+  .text{
+    width: 100vw;
+  }
+}
+
+@media (min-width: 1023px) {
+  .control{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 445px){
+  .control{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
 </style>
